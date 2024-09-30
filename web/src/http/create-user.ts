@@ -12,7 +12,7 @@ export async function CreateUser({
 	password,
 }: CreateUserRequest) {
 	// Faz uma requisição POST para o endpoint "/create-user" no backend
-	const response = await fetch("http://localhost:3333/create-user", {
+	const response = await fetch("https://inorbit-8did.onrender.com/create-user", {
 		method: "POST", // Define o método HTTP como POST
 		headers: {
 			"Content-Type": "application/json", // Define o tipo de conteúdo como JSON
