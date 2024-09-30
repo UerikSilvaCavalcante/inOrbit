@@ -43,6 +43,7 @@ app.register(CreateUser); // Rota para criar um novo usuário
 app
 	.listen({
 		port: 3333,
+		host: "0.0.0.0",
 	})
 	.then(() => {
 		console.log("HTTP server running!"); // Mensagem indicando que o servidor está ativo
