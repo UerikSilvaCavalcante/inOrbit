@@ -4,15 +4,14 @@ import { CheckCircle2, Plus } from "lucide-react";
 import { InOrbitIcon } from "./in-orbit-icon";
 import { Progress, ProgressIndicator } from "./ui/progress-bar";
 import { Separator } from "./ui/separator";
-import { OutlineButton } from "./ui/outline-button";
 import { getSummary } from "../http/get-summary";
 import { useQuery } from "@tanstack/react-query";
 import dayjs from "dayjs";
-import ptBR from "dayjs/locale/pt-BR";
+import "dayjs/locale/pt-BR";
 import { PendingGoals } from "./peding-goals";
 import logout from "../assets/box-arrow-right.svg";
 
-dayjs.locale(ptBR); // Configura o dayjs para usar o formato de datas do Brasil
+dayjs.locale("pt-br"); // Configura o dayjs para usar o formato de datas do Brasil
 
 // Define a interface para o componente Summary que recebe id e função de logout como props
 interface userId {
