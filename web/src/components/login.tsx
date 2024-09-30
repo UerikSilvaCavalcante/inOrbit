@@ -99,11 +99,11 @@ export function Login({
 								<p className="text-red-400 text-sm mb-4">{errorMessage}</p>
 							)}
 							<div className=" w-4/5 flex flex-col gap-3 items-center justify-center">
-								<Button className="flex - 1 w-full hover:transition-colors">
+								<Button className="flex - 1 w-full hover:scale-105">
 									Entrar {/* Botão de login */}
 								</Button>
 								<Button
-									className="flex - 1 w-full bg-zinc-800 hover:bg-zinc-700 transition-colors"
+									className="flex-1 w-full bg-zinc-800 hover:bg-zinc-700 hover:scale-105"
 									variant="secondary"
 									onClick={onToggleForm} // Alterna para o formulário de cadastro
 								>

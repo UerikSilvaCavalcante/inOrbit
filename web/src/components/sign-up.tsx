@@ -133,11 +133,11 @@ export function SignUp({ onToggleForm }: { onToggleForm: () => void }) {
 
 							{/* Botões de Cadastrar-se e Já tenho uma conta */}
 							<div className="w-4/5 flex flex-col gap-3 items-center justify-center mb-3">
-								<Button className="flex-1 w-full hover:transition-colors">
+								<Button className="flex-1 w-full  hover:scale-105">
 									Cadastrar-se
 								</Button>
 								<Button
-									className="flex-1 w-full bg-zinc-800 hover:bg-zinc-700 transition-colors"
+									className="flex-1 w-full  hover:scale-105 bg-zinc-800 hover:bg-zinc-700 "
 									variant="secondary"
 									onClick={onToggleForm} // Troca para o formulário de login
 								>

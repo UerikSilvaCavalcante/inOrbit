@@ -7,7 +7,6 @@ import { getSummary } from "./http/get-summary";
 import { Login } from "./components/login";
 import { useState } from "react";
 import { SignUp } from "./components/sign-up";
-import { string } from "zod";
 
 export function App() {
 	// const [count, setCount] = useState(0)
@@ -65,7 +64,7 @@ export function App() {
 				) : data?.total && data.total > 0 ? (
 					<Summary id={id as string} onLogout={handleLogout} />
 				) : (
-					<EmptyGoals id={id as string} />
+					<EmptyGoals id={id as string} onLogout={handleLogout}/>
 				)}
 				{/* {} */}
 

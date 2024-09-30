@@ -25,6 +25,7 @@ export function Summary({ id, onLogout }: userId) {
 	const { data } = useQuery({
 		queryKey: ["week-summary", id],
 		queryFn: () => getSummary(id), // Função que faz a requisição dos dados
+		enabled: !!id,
 		staleTime: 1000 * 60, // Define o tempo que a query fica "fresca" por 60 segundos
 	});
 
