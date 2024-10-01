@@ -17,7 +17,7 @@ export const getWeekPendingGoalsRoute: FastifyPluginAsyncZod = async (app) => {
 		async (request) => {
 			const { id } = request.params;
 			const { pendingGoals } = await getWeekPendingGoals(id);
-			console.log("peding goals", pendingGoals);
+			// console.log("peding goals", pendingGoals);
 			return { pendingGoals };
 		},
 	);
