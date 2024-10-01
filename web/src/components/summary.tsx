@@ -7,7 +7,7 @@ import { Separator } from "./ui/separator";
 import { getSummary } from "../http/get-summary";
 import { useQuery } from "@tanstack/react-query";
 import dayjs from "dayjs";
-import "dayjs/locale/pt-BR";
+import "dayjs/locale/pt-br";
 import { PendingGoals } from "./peding-goals";
 import logout from "../assets/box-arrow-right.svg";
 
