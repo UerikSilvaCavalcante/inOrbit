@@ -24,18 +24,22 @@ export function SignUp({ onToggleForm }: { onToggleForm: () => void }) {
 	const [errorMessage, setErrorMessage] = useState(""); // Estado para armazenar mensagens de erro
 
 	// useForm é um hook do react-hook-form para gerenciar o estado do formulário e integrar a validação com Zod
-	const { register, control, handleSubmit, formState, reset } =
-		useForm<getUserForm>({
-			resolver: zodResolver(getUser), // Conecta a validação do Zod ao formulário
-		});
+	const { register, handleSubmit, formState } = useForm<getUserForm>({
+		resolver: zodResolver(getUser), // Conecta a validação do Zod ao formulário
+	});
 
 	// Função para limpar os campos e focar no campo de nome
 	function Inputs() {
-		const iname = document.getElementById("name");
+		const iname = document.getElementById("name") as HTMLInputElement | null;
+		const iuser = document.getElementById("user") as HTMLInputElement | null;
+		const ipassword = document.getElementById(
+			"password",
+		) as HTMLInputElement | null;
+
 		iname?.focus();
-		document.getElementById("name").value = "";
-		document.getElementById("user").value = "";
-		document.getElementById("password").value = "";
+		if (iname) iname.value = "";
+		if (iuser) iuser.value = "";
+		if (ipassword) ipassword.value = "";
 	}
 
 	// Função chamada ao submeter o formulário
