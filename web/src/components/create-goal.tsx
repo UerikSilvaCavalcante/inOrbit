@@ -81,7 +81,7 @@ export function CreateGoal({ id }: userId) {
 				{/* Formulário para criação de metas */}
 				<form
 					onSubmit={handleSubmit(handleCreateGoal)} // handleSubmit processa o formulário e chama handleCreateGoal
-					className="flex-1 flex flex-col justify-between"
+					className="flex-1 flex flex-col justify-between max-h-[500px]"
 				>
 					{/* Campo de entrada para o título da meta */}
 					<div className="flex flex-col gap-6">
@@ -173,7 +173,7 @@ export function CreateGoal({ id }: userId) {
 					</div>
 
 					{/* Botões de fechar e salvar */}
-					<div className="flex items-center gap-3">
+					<div className="flex items-center gap-3 mt-5">
 						<DialogClose asChild>
 							<Button className="flex-1" variant="secondary">
 								Fechar
