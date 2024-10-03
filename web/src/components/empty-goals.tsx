@@ -12,15 +12,14 @@ interface userId {
 }
 
 export function EmptyGoals({ id, onLogout }: userId) {
-
-	function handleLogout(){
-		onLogout(false)
+	function handleLogout() {
+		onLogout(false);
 	}
 
 	return (
 		<Dialog>
 			<div className="h-screen w-2/5 m-auto flex flex-col items-center justify-center gap-8">
-				<div className="w-3/4 flex items-center justify-end gap-32 ">
+				<div className="w-3/4 flex items-center justify-end gap-2 md:gap-16 lg:gap-32 ">
 					<img src={logo} alt="in.orbit" />
 					<img
 						src={logout}

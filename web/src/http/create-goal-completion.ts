@@ -1,7 +1,7 @@
 // Função para marcar a conclusão de uma meta
 export async function createGoalCompletion(goalId: string) {
 	// Faz uma requisição POST para o endpoint "/completions" no backend
-	await fetch("https://inorbit-8did.onrender.com/completions", {
+	await fetch("https://inorbitapi.vercel.app/completions", {
 		method: "POST", // Define o método HTTP como POST
 		headers: {
 			"Content-Type": "application/json", // Define o tipo de conteúdo como JSON

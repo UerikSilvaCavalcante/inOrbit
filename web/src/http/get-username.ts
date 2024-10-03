@@ -7,7 +7,7 @@ interface GetUsername {
 // Função que faz a requisição POST para autenticar o usuário com base no username e password
 export async function GetUsername({ username, password }: GetUsername) {
 	// Faz a requisição POST para o endpoint "/username"
-	const response = await fetch("https://inorbit-8did.onrender.com/username", {
+	const response = await fetch("https://inorbitapi.vercel.app/username", {
 		method: "POST", // Especifica que o método HTTP é POST
 		headers: {
 			"Content-Type": "application/json", // Define o tipo de conteúdo como JSON

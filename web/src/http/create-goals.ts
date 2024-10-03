@@ -12,7 +12,7 @@ export async function createGoal({
 	userId,
 }: CreateGoalRequest) {
 	// Realiza uma requisição POST para o endpoint "/goals" no backend
-	await fetch("https://inorbit-8did.onrender.com/goals", {
+	await fetch("https://inorbitapi.vercel.app/goals", {
 		method: "POST", // Define o método HTTP como POST
 		headers: {
 			"Content-Type": "application/json", // Define o tipo de conteúdo como JSON

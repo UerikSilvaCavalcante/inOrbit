@@ -12,7 +12,7 @@ export async function getPendingGoals(
 ): Promise<PendingGoalsResponse> {
 	// Faz a requisição GET para o endpoint que retorna as metas pendentes do usuário
 	const response = await fetch(
-		`https://inorbit-8did.onrender.com/pending-goals/${userId}`,
+		`https://inorbitapi.vercel.app/pending-goals/${userId}`,
 	);
 
 	// Converte a resposta da API para JSON

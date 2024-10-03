@@ -52,7 +52,7 @@ export function Summary({ id, onLogout }: userId) {
 			<div className="flex items-center justify-between">
 				<div className="flex items-center gap-3">
 					<InOrbitIcon /> {/* Ícone customizado */}
-					<span className="text-lg font-semibold capitalize">
+					<span className="text-sm  font-semibold capitalize lg:text-lg">
 						{firstDayOfWeek} - {lastDayOfWeek}
 					</span>
 				</div>

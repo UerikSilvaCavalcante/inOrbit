@@ -8,6 +8,8 @@ import { zodResolver } from "@hookform/resolvers/zod"; // Conector entre Zod e R
 import { useForm } from "react-hook-form"; // Hook para gerenciar formulários de maneira eficiente
 import { useState } from "react"; // Hook para gerenciar estados dentro de componentes
 import { CreateUser } from "../http/create-user"; // Função que faz a requisição para criar um usuário
+import show from "../assets/eye-fill.svg";
+import hide from "../assets/eye-slash-fill.svg";
 
 // Esquema de validação usando Zod. Define os campos e suas validações.
 const getUser = z.object({
@@ -27,6 +29,16 @@ export function SignUp({ onToggleForm }: { onToggleForm: () => void }) {
 	const { register, handleSubmit, formState } = useForm<getUserForm>({
 		resolver: zodResolver(getUser), // Conecta a validação do Zod ao formulário
 	});
+
+	const [showPass, setShowPass] = useState(false);
+
+	function handleShowPass() {
+		if (showPass) {
+			setShowPass(false);
+		} else {
+			setShowPass(true);
+		}
+	}
 
 	// Função para limpar os campos e focar no campo de nome
 	function Inputs() {
@@ -122,12 +134,20 @@ export function SignUp({ onToggleForm }: { onToggleForm: () => void }) {
 										className="w-full"
 										id="password"
 										placeholder="Digite sua senha"
+										type={showPass ? "text" : "password"}
 										{...register("password")}
 									/>
 									{/* Mensagem de erro se o campo não for válido */}
 									{formState.errors.password && (
 										<p className="text-red-400 text-sm">Senha inválida</p>
 									)}
+									<img
+										src={showPass ? show : hide}
+										alt="esconder"
+										className="absolute  w-6 h-6 translate-x-56 translate-y-4 cursor-pointer"
+										onClick={handleShowPass}
+										onKeyUp={handleShowPass}
+									/>
 								</div>
 								{/* Exibe a mensagem de erro, se houver */}
 								{errorMessage && (

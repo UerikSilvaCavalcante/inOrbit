@@ -15,7 +15,7 @@ type summaryResponse = {
 // Função que busca o resumo semanal das metas do usuário com base no userId
 export async function getSummary(userId: string): Promise<summaryResponse> {
     // Faz a requisição GET para o endpoint que retorna o resumo semanal do usuário
-    const response = await fetch(`https://inorbit-8did.onrender.com/week-summary/${userId}`);
+    const response = await fetch(`https://inorbitapi.vercel.app/week-summary/${userId}`);
 
     // Converte a resposta da API para JSON
     const data = await response.json();

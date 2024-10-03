@@ -5,7 +5,7 @@ export async function deletePendingGoal(id: string) {
         console.log(id);
 
         // Faz uma requisição DELETE para o endpoint "/excluir-pending" no backend
-        await fetch("https://inorbit-8did.onrender.com/excluir-pending", {
+        await fetch("https://inorbitapi.vercel.app/excluir-pending", {
             method: "DELETE", // Define o método HTTP como DELETE
             headers: {
                 "Content-Type": "application/json", // Define o tipo de conteúdo como JSON

@@ -8,6 +8,8 @@ import { zodResolver } from "@hookform/resolvers/zod"; // Importa o resolvedor p
 import { useForm } from "react-hook-form"; // Importa o hook para gerenciar formulários
 import { GetUsername } from "../http/get-username"; // Importa a função para obter o usuário
 import { useState } from "react"; // Importa o hook useState para gerenciar o estado
+import show from "../assets/eye-fill.svg";
+import hide from "../assets/eye-slash-fill.svg";
 
 // Define o esquema de validação do formulário de login
 const getUsernameForm = z.object({
@@ -28,10 +30,19 @@ export function Login({
 }) {
 	const [errorMessage, setErrorMessage] = useState(""); // Estado para armazenar mensagens de erro
 
-	const { register, handleSubmit, formState } =
-		useForm<getUsernameForm>({
-			resolver: zodResolver(getUsernameForm), // Usa o resolvedor do zod para validação
-		});
+	const { register, handleSubmit, formState } = useForm<getUsernameForm>({
+		resolver: zodResolver(getUsernameForm), // Usa o resolvedor do zod para validação
+	});
+
+	const [showPass, setShowPass] = useState(false);
+
+	function handleShowPass() {
+		if (showPass) {
+			setShowPass(false);
+		} else {
+			setShowPass(true);
+		}
+	}
 
 	// Função chamada ao enviar o formulário
 	async function handleGetUsername(data: getUsernameForm) {
@@ -89,11 +100,19 @@ export function Login({
 										className="w-full"
 										id="password"
 										placeholder="Digite sua senha"
+										type={showPass ? "text" : "password"}
 										{...register("password")} // Registra o campo com react-hook-form
 									/>
 									{formState.errors.password && (
 										<p className="text-red-400 text-sm">Senha invalido</p> // Mensagem de erro para o campo de usuário
 									)}
+									<img
+										src={showPass ? show : hide}
+										alt="esconder"
+										className="absolute  w-6 h-6 translate-x-56 translate-y-4 cursor-pointer"
+										onClick={handleShowPass}
+										onKeyUp={handleShowPass}
+									/>
 								</div>
 							</div>
 							{/* Exibe a mensagem de erro, se houver */}
