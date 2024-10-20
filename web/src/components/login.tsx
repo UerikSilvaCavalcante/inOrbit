@@ -87,6 +87,7 @@ export function Login({
 										id="user"
 										autoFocus // Foca automaticamente neste campo
 										placeholder="Digite seu usuario"
+										value="user"
 										{...register("username")} // Registra o campo com react-hook-form
 									/>
 									{formState.errors.username && (
@@ -101,6 +102,7 @@ export function Login({
 										id="password"
 										placeholder="Digite sua senha"
 										type={showPass ? "text" : "password"}
+										value="user123"
 										{...register("password")} // Registra o campo com react-hook-form
 									/>
 									{formState.errors.password && (
